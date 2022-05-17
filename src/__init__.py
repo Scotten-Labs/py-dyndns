@@ -1,2 +1,2 @@
-from .network import *
-from .config import *
+from .Network import *
+from .Config import *
