@@ -12,7 +12,7 @@ class Config:
                 self.data = list(reader)
             return True
         except FileNotFoundError:
-            raise FileNotFoundError
+            raise FileNotFoundError("File not found at '" + path + "'.")
 
     def get(self, service: str, value: str) -> str | bool | int | float:
         try:
