@@ -1,4 +1,4 @@
-from src import Config
+from src import *
 
 def test_open():
     path = "data/config_template.csv"

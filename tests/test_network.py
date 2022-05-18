@@ -1,4 +1,4 @@
-from src import Network
+from src import *
 import requests
 
 def test_getWAN():
