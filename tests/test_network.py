@@ -1,5 +1,5 @@
-from src import *
+from src import network
 import requests
 
 def test_getWAN():
-    assert Network.Local.getWAN() == requests.get("https://api.my-ip.io/ip").text
+    assert network.Local.getWAN() == requests.get("https://api.my-ip.io/ip").text
