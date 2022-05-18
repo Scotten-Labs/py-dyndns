@@ -26,7 +26,7 @@ class Config:
         except FileNotFoundError:
             raise FileNotFoundError("File not found at '" + path + "'.")
 
-    def get(self, service: str, value: str) -> Union[str, bool, int, float]:
+    def get(self, service: str, value: str) -> str | bool | int | float:
         """Returns the key pair from the config file.
 
         Args:
