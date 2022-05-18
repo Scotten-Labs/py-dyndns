@@ -1,2 +1,2 @@
-# from Network import *
-# from Config import *
+from .network import *
+from .config import *
