@@ -35,8 +35,8 @@
 	"extensions": [
 		"ms-python.python",
 		"ms-python.vscode-pylance",
-		"wakatime.vscode-wakatime",
-		"njpwerner.autodocstring"
+		"wakatime.vscode-wakatime"
+		// "njpwerner.autodocstring" // Causes a bug where Python is unable to give code completion.
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
