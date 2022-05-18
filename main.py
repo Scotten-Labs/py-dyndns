@@ -2,7 +2,7 @@ from src import *
 import CloudFlare
 
 if __name__ == "__main__":
-    wan = Network.Local.getWAN()
+    wan = network.Local.getWAN()
     print(wan)
 
     c = Config()
@@ -10,7 +10,7 @@ if __name__ == "__main__":
     key = c.get("cloudflare", "api_key")
     print(key)
 
-    rem = Network.Remote(key)
+    rem = network.Remote(key)
     id = rem.getID()
     print(id)
 
