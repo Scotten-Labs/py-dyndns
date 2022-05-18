@@ -1,5 +1,5 @@
 from csv import DictReader
-from ctypes import Union
+from typing import Union
 
 class Config:
 
