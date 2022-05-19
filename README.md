@@ -2,7 +2,7 @@
 
 # Py DYN DNS
 
-Dynamic DNS using the Cloudflare API.
+Dynamic DNS using the ~~Cloudflare API~~.
 
 ## Supported Versions
 
