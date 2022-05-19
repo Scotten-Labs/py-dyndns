@@ -1,5 +1,4 @@
 from csv import DictReader
-from typing import Union
 
 class Config:
 
@@ -41,4 +40,4 @@ class Config:
                 if i["service"] == service:
                     return i[value]
         except TypeError:
-            return None
+            raise TypeError("Cannot get data from empty list. Make sure to run Config.open(path)")
