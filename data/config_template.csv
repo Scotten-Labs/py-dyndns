@@ -1,2 +1,2 @@
-service,api_key
-cloudflare,<api_key>
+service,api_token,domain
+cloudflare,<api_token>,<domain_name>
