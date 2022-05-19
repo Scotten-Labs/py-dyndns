@@ -1,5 +1,6 @@
+import csv
 from src import *
-import CloudFlare
+import requests
 
 if __name__ == "__main__":
     wan = network.Local.getWAN()
@@ -7,16 +8,53 @@ if __name__ == "__main__":
 
     c = Config()
     c.open("data/config.csv")
-    key = c.get("cloudflare", "api_key")
-    print(key)
+    token = c.get("cloudflare", "api_token")
+    domain = c.get("cloudflare", "domain")
 
-    rem = network.Remote(key)
-    id = rem.getID()
-    print(id)
+    rem = network.Remote(token, domain)
+    zoneid = rem._zoneID
+    print(zoneid)
+    
+    r = rem.updateLocalRecords()
+    
+    print(r)
+    
+    for i in rem.getRecords():
+        print(i["name"])
 
-    # cf = CloudFlare.CloudFlare(token=key)
-    # zones = cf.zones.get()
-    # for zone in zones:
-    #     zone_id = zone['id']
-    #     zone_name = zone['name']
-    #     print("zone_id=%s zone_name=%s" % (zone_id, zone_name))
+    # x = requests.get(url=f"https://api.cloudflare.com/client/v4/zones/{zoneid}/dns_records",
+    #                  headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"})
+    # response = x.json()
+    # print(type(response))
+    
+    # fnames = set()
+    
+    # print(response)
+    
+    # for o in response:
+    #     fnames.add(o)
+    
+    # with open("data/store2.csv", "w") as f:
+    #     writer = csv.DictWriter(f, fnames)
+    #     writer.writeheader()
+    #     writer.writerows(response)
+
+
+    # store = [i for i in response["result"]]
+    
+    # print(type(store))
+    
+    # for o in store: print(str(o) + "\n")
+    
+    # print(type(response["result"]))
+    
+    # fnames = set()
+    
+    # for o in store:
+    #     for n in o:
+    #         fnames.add(n)
+
+    # with open("data/store.csv", "w") as f:
+    #     writer = csv.DictWriter(f, fnames)
+    #     writer.writeheader()
+    #     writer.writerows(store)
