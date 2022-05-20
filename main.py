@@ -10,8 +10,7 @@ if __name__ == "__main__":
     cf = network.Remote(token, domain)
     cf.updateLocalRecords()
     
-    records = ["test", "test2"]
-    
+    records = [rec.strip() for rec in open("data/records.txt")]
     
     ### This is written to adjust A records and point them towards the local WAN address.
     while True:
