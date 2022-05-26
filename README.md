@@ -4,9 +4,9 @@
 
 Dynamic DNS using the Cloudflare API.
 
-## Supported Versions
+## Supported Python Versions / Requirements
 
-Python 3.10.x
+Python 3.10.x or greater
 
 ## Setup
 
